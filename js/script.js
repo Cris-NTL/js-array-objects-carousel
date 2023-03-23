@@ -51,36 +51,32 @@ const downBtn = document.querySelector(".down-btn");
 const pauseBtn = document.querySelector(".pause-btn");
 const repeatBtn = document.querySelector(".repeat-btn");
 
-// hide the up button
-// upBtn.style.display = "none";
-
 // click function for up-button
 upBtn.addEventListener('click', function () {
-    downBtn.style.display = "block";
     if (activeItem > 0) {
         itemOfArray[activeItem].classList.remove('active');
         activeItem--;
         itemOfArray[activeItem].classList.add('active');
     }
-    // // hide the up button if it reaches the first item
-    // if (activeItem === 0) {
-    //     upBtn.style.display = "none";
-    // }
+    else if (activeItem === 0) {
+        itemOfArray[activeItem].classList.remove("active");
+        activeItem = itemOfArray.length - 1;
+        itemOfArray[activeItem].classList.add("active");
+    }
 })
 
 // click function for down-button
 downBtn.addEventListener('click', function () {
-    upBtn.style.display = "block";
     if (activeItem < (arrayOfImages.length - 1)) {
         itemOfArray[activeItem].classList.remove("active");
         activeItem++;
         itemOfArray[activeItem].classList.add("active");
+    } else {
+        itemOfArray[activeItem].classList.remove("active");
+        activeItem = 0;
+        itemOfArray[activeItem].classList.add("active");
     }
-    // hide the down button if it reaches the last item
-    // if (activeItem === arrayOfImages.length - 1) {
-    //     downBtn.style.display = "none";
-    // }
-});
+})
 
 // function setInterval
 setInterval(function () {
@@ -93,18 +89,6 @@ setInterval(function () {
         activeItem = 0;
         itemOfArray[activeItem].classList.add("active");
     }
-    // // hide the up button if it reaches the first item
-    // if (activeItem === 0) {
-    //     upBtn.style.display = "none";
-    // } else {
-    //     upBtn.style.display = "block";
-    // }
-    // // hide the down button if it reaches the last item
-    // if (activeItem === arrayOfImages.length - 1) {
-    //     downBtn.style.display = "none";
-    // } else {
-    //     downBtn.style.display = "block";
-    // }
 }, 3000);
 
 
