@@ -1,0 +1,122 @@
+/* reset */
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* // reset */
+
+/* common rules */
+.container {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.slider {
+    width: 80%;
+    height: 70%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slider-items {
+    width: 100%;
+    height: 100%;
+}
+
+.item {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: relative;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50px;
+}
+
+.text {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    position: absolute;
+    padding: 1rem 2.5rem;
+    /* height: 3rem; */
+    width: 100%;
+    bottom: 0;
+    border-radius: 0 0 50px 50px;
+    text-align: end;
+    font-weight: bold;
+}
+
+/* // common rules */
+
+/* utility */
+.item.active {
+    display: block;
+}
+
+/* // utility */
+
+/* specific rules */
+/* buttons */
+
+button {
+    position: absolute;
+    transform: translateX(-50%);
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.up-btn,
+.down-btn {
+    top: 50%;
+    height: 40px;
+    width: 30px;
+}
+
+.up-btn {
+    left: 2em;
+}
+
+.down-btn {
+    right: 0;
+}
+
+.pause-btn,
+.repeat-btn {
+    top: 1rem;
+    height: 30px;
+    width: 40px;
+}
+
+.pause-btn {
+    left: calc(50% + 2.5px);
+    margin-left: 2.5px;
+
+}
+
+.repeat-btn {
+    right: calc(50% + 2.5px);
+    margin-right: 2.5px;
+}
+
+/* // buttons */
+/* // specific rules */
